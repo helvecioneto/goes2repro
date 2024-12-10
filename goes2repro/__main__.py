@@ -71,8 +71,27 @@ def crop_reproject(file, output):
 
 if __name__ == '__main__':
 
-    epilog = f"Exemple:\n\tpython goes2repro -s goes16 -p ABI-L2-CMIPF -c 13 -v CMI "
-        
+    epilog = """
+    Example usage:
+
+    To download and process data from the GOES-16 satellite for the ABI-L2-CMIPF product, extracting the CMI variable from channel 13, with a time range from 2022-12-15 00:00:00 to 2022-12-15 01:00:00:
+
+    python goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00" --output_path "output/"
+
+    To download data with a custom time period of 5 minutes between 10:00 and 14:00:
+
+    python goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 10:00:00" --end_date "2022-12-15 14:00:00" --period "5 min" --between_hours 10 14 --output_path "output/"
+
+    To enable parallel processing with 8 processes:
+
+    python goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00" --parallel --processes 8 --output_path "output/"
+
+    To specify a geographic bounding box and set the number of attempts to 5:
+
+    python goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00" --lat_min -50 --lat_max 30 --lon_min -110 --lon_max -30 --max_attempts 5 --output_path "output/"
+    """
+
+
     # Set arguments
     parser = argparse.ArgumentParser(description='Converts GOES-16 L2 data to netCDF',
                                     epilog=epilog,
