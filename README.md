@@ -1,6 +1,8 @@
 # GOES2REPRO
 
-GOES2REPRO is a utility script that leverages functions from the **goes2go** library, but focuses on downloading, cropping, and reprojecting GOES satellite data. It processes Level 2 (L2) data, allowing users to download data, crop it to a specific geographic area, and reproject it into the EPSG:4326 coordinate reference system. The script provides flexibility for selecting different products, channels, and satellites, with easy integration for parallel processing.
+GOES2REPRO is a utility script that leverages functions from the **goes2go** library, but focuses on downloading, cropping, and reprojecting GOES satellite data.
+Allowing users to download data, crop it to a specific geographic area, and reproject it into the EPSG:4326 coordinate reference system.
+The script provides flexibility for selecting different products, channels, and satellites, with easy integration for parallel processing.
 
 ## Features
 
