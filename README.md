@@ -33,9 +33,9 @@ To run the script, you will need the following Python libraries:
 
 You can install the necessary dependencies using `pip`:
 
-    ```bash
-    pip install pandas tqdm s3fs xarray rioxarray pyproj goes2go
-    ```
+```bash
+pip install pandas tqdm s3fs xarray rioxarray pyproj goes2go
+```
 
 ## Usage
 
@@ -43,9 +43,9 @@ You can install the necessary dependencies using `pip`:
 
 The script uses the `argparse` module for handling command-line arguments. Below are the available options:
 
-    ```bash
-    python goes2repro.py [OPTIONS]
-    ```
+```bash
+python goes2repro [OPTIONS]
+```
 
 | Option               | Description                                                                 |
 |----------------------|-----------------------------------------------------------------------------|
@@ -69,10 +69,11 @@ The script uses the `argparse` module for handling command-line arguments. Below
 
 ### Examples
 To use the script to download and process data for the GOES-16 satellite, ABI-L2-CMIPF product, variable CMI, and channel 13, with a time range of 2022-12-15 from 00:00:00 to 01:00:00, run the following command:
-    
-    ```bash
-    python goes2repro.py --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00"
-    ```
+
+
+```bash
+python goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00"
+```
 
 ### Credits
 All the credit goes to the original author of the **goes2go** library.
