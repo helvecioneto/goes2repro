@@ -1,0 +1,7 @@
+pandas
+tqdm
+s3fs
+xarray
+rioxarray
+pyproj
+goes2go

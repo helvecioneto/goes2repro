@@ -21,22 +21,10 @@ The script supports various GOES-16 products, which include different channels a
 
 ### Prerequisites
 
-To run the script, you will need the following Python libraries:
-
-- `argparse`
-- `pandas`
-- `tqdm`
-- `s3fs`
-- `xarray`
-- `rioxarray`
-- `shutil`
-- `pyproj`
-- `goes2go`
-
 You can install the necessary dependencies using `pip`:
 
 ```bash
-pip install pandas tqdm s3fs xarray rioxarray pyproj goes2go
+pip install goes2repro
 ```
 
 ## Usage
@@ -46,7 +34,7 @@ pip install pandas tqdm s3fs xarray rioxarray pyproj goes2go
 The script uses the `argparse` module for handling command-line arguments. Below are the available options:
 
 ```bash
-python goes2repro [OPTIONS]
+goes2repro [OPTIONS]
 ```
 
 | Option               | Description                                                                 |
@@ -74,7 +62,13 @@ To use the script to download and process data for the GOES-16 satellite, ABI-L2
 
 
 ```bash
-python goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00"
+goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --start_date "2022-12-15 00:00:00" --end_date "2022-12-15 01:00:00"
+```
+
+To download and process recent 30-minute data for the GOES-16 satellite, ABI-L2-CMIPF product, variable CMI, and channel 13, run the following command:
+
+```bash
+goes2repro --satellite goes16 --product ABI-L2-CMIPF --var_name CMI --channel 13 --recent 30 --output_path "output/"
 ```
 
 ### Credits
