@@ -13,7 +13,7 @@ with open('requirements.txt') as f:
 
 setup(
     name="goes2repro",
-    version='1.0.0',
+    version='1.0.1',
     author="Helvecio B. L. Neto",
     author_email="helvecioblneto@gmail.com",
     description="A package to download and process GOES-16/17 data",
@@ -36,7 +36,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'goes2repro=goes2repro.__main__:main',  # Ajuste o caminho para o seu módulo e função principal
+            'goes2repro=goes2repro.main:main',
         ],
     },
 )
